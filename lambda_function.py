@@ -22,7 +22,7 @@ def lambda_handler(event, context):
     s3_client.put_object(Bucket=trgt_bucket,Key='transform.json',Body=a)
     # print(json_file1)
     # s3_client.put_object(Bucket=trgt_bucket,Key='json_file1')
-    message=f"Input s3 file {key} has been processed successfully !!"
+    message=f"Input s3 file {key} has been processed successfully  !!"
     resp_msg=sns_client.publish(Subject='Succes Daily Data Processing',TargetArn=sns_arn,Message=message,MessageStructure='text')
     return {
         'statusCode': 200,
